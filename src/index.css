@@ -9,7 +9,11 @@
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Open Sans", system-ui, sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
 #root {

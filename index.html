@@ -1,14 +1,103 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr-CA">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo-afrique-tremblant.png" />
+    <link rel="apple-touch-icon" href="/logo-afrique-tremblant.png" />
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Association Afrique-Tremblant</title>
-    <meta name="description" content="Un espace d'entraide, d'intégration, de solidarité et de valorisation culturelle au cœur de Mont-Tremblant." />
+
+    <!-- SEO primaire -->
+    <title>Association Afrique-Tremblant | Communauté africaine à Mont-Tremblant, Québec</title>
+    <meta name="description" content="Association Afrique-Tremblant — OBNL apolitique et laïque à Mont-Tremblant, Québec. Entraide, intégration des nouveaux arrivants, culture africaine et partenariats locaux. Rejoignez notre communauté." />
+    <meta name="keywords" content="association africaine Mont-Tremblant, communauté africaine Québec, OBNL intégration Laurentides, culture africaine Tremblant, entraide immigrants Québec, association communautaire Mont-Tremblant, Afrique-Tremblant, nouveaux arrivants Laurentides" />
+    <meta name="author" content="Association Afrique-Tremblant" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://afrique-tremblant.vercel.app/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:site_name" content="Association Afrique-Tremblant" />
+    <meta property="og:url" content="https://afrique-tremblant.vercel.app/" />
+    <meta property="og:title" content="Association Afrique-Tremblant | Communauté africaine à Mont-Tremblant" />
+    <meta property="og:description" content="OBNL apolitique et laïque fondé sur l'entraide, l'intégration et la valorisation de la culture africaine au cœur des Laurentides, Québec." />
+    <meta property="og:image" content="https://afrique-tremblant.vercel.app/logo-afrique-tremblant.png" />
+    <meta property="og:image:alt" content="Logo de l'Association Afrique-Tremblant" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Association Afrique-Tremblant | Mont-Tremblant, Québec" />
+    <meta name="twitter:description" content="OBNL apolitique fondé sur l'entraide, l'intégration et la valorisation de la culture africaine à Mont-Tremblant." />
+    <meta name="twitter:image" content="https://afrique-tremblant.vercel.app/logo-afrique-tremblant.png" />
+
+    <!-- Géolocalisation -->
+    <meta name="geo.region" content="CA-QC" />
+    <meta name="geo.placename" content="Mont-Tremblant, Québec, Canada" />
+    <meta name="geo.position" content="46.1185;-74.5963" />
+    <meta name="ICBM" content="46.1185, -74.5963" />
+
+    <!-- JSON-LD : Organisation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Association Afrique-Tremblant",
+      "alternateName": "Afrique-Tremblant",
+      "url": "https://afrique-tremblant.vercel.app/",
+      "logo": "https://afrique-tremblant.vercel.app/logo-afrique-tremblant.png",
+      "image": "https://afrique-tremblant.vercel.app/hero.png",
+      "description": "Association communautaire à but non lucratif (OBNL) fondée sur l'entraide, l'intégration des nouveaux arrivants, la valorisation de la culture africaine et les partenariats locaux à Mont-Tremblant, Québec.",
+      "foundingDate": "2024",
+      "email": "afriquetremblant@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2-840 rue Labelle",
+        "addressLocality": "Mont-Tremblant",
+        "addressRegion": "QC",
+        "postalCode": "J8E 2W5",
+        "addressCountry": "CA"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Mont-Tremblant et Laurentides, Québec, Canada"
+      },
+      "knowsAbout": [
+        "culture africaine",
+        "intégration des immigrants",
+        "entraide communautaire",
+        "diversité culturelle",
+        "OBNL Québec"
+      ],
+      "sameAs": [],
+      "nonprofitStatus": "Nonprofit501c3"
+    }
+    </script>
+
+    <!-- JSON-LD : BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://afrique-tremblant.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Mission", "item": "https://afrique-tremblant.vercel.app/#mission" },
+        { "@type": "ListItem", "position": 3, "name": "Gouvernance", "item": "https://afrique-tremblant.vercel.app/#gouvernance" },
+        { "@type": "ListItem", "position": 4, "name": "Adhésion", "item": "https://afrique-tremblant.vercel.app/#adhesion" },
+        { "@type": "ListItem", "position": 5, "name": "Contact", "item": "https://afrique-tremblant.vercel.app/#contact" }
+      ]
+    }
+    </script>
+
+    <!-- Polices Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
