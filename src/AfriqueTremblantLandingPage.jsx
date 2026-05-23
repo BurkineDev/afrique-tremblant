@@ -1263,6 +1263,17 @@ export default function AfriqueTremblantLandingPage() {
             <p className="text-[11px] text-white/30">
               Organisme à but non lucratif · Province de Québec · Canada
             </p>
+            <p className="text-[11px] text-white/30">
+              Conçu par{" "}
+              <a
+                href="https://www.wendtech.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-orange-400/80 underline-offset-2 transition hover:text-orange-300 hover:underline"
+              >
+                WendTech
+              </a>
+            </p>
           </div>
         </div>
       </footer>
