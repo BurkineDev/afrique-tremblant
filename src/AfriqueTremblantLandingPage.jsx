@@ -51,6 +51,7 @@ const NAV_LINKS = [
   { label: "Statuts",     href: "#statuts"     },
   { label: "Activités",   href: "#activites"   },
   { label: "Adhésion",    href: "#adhesion"    },
+  { label: "Actualités",  href: "#actualites"  },
   { label: "Contact",     href: "#contact"     },
 ];
 
@@ -329,6 +330,169 @@ function FaqItem({ q, a, index }) {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+/* ── Actualités : IRONMAN 70.3 ──────────────────────────── */
+const IRONMAN_PHOTOS = [
+  { src: "/ironman-1.jpeg", caption: "Les membres de l'association avec des athlètes finishers" },
+  { src: "/ironman-2.jpeg", caption: "Une athlète fière de recevoir son t-shirt Afrique-Tremblant" },
+  { src: "/ironman-3.jpeg", caption: "Ambiance au fil d'arrivée de l'IRONMAN 70.3" },
+  { src: "/ironman-4.jpeg", caption: "Remise d'un t-shirt à un finisher médaillé" },
+];
+
+function IronmanSection() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <section id="actualites" className="px-5 py-20 md:px-10 md:py-28" style={{ background: C.cream }}>
+      <div className="mx-auto max-w-7xl">
+
+        {/* Header */}
+        <FadeUp>
+          <div className="flex flex-wrap items-center gap-3 mb-10">
+            <span
+              className="rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.3em] text-white"
+              style={{ background: C.red }}
+            >
+              Actualité récente
+            </span>
+            <span className="text-[11px] font-semibold text-neutral-400">22 juin 2025 · Mont-Tremblant</span>
+          </div>
+          <SectionHead
+            eyebrow="Sur le terrain"
+            title="Afrique-Tremblant à l'IRONMAN 70.3"
+            body="L'association a participé à l'un des plus grands événements sportifs internationaux de la région, renforçant sa présence et sa visibilité auprès de milliers d'athlètes et de visiteurs."
+          />
+        </FadeUp>
+
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+
+          {/* Photo gallery */}
+          <FadeUp>
+            <div className="space-y-3">
+              {/* Main photo */}
+              <div className="relative overflow-hidden rounded-2xl bg-neutral-100 aspect-[4/3]">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={active}
+                    src={IRONMAN_PHOTOS[active].src}
+                    alt={IRONMAN_PHOTOS[active].caption}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  />
+                </AnimatePresence>
+                {/* Caption */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-5 py-4">
+                  <p className="text-xs font-semibold text-white/90">
+                    {IRONMAN_PHOTOS[active].caption}
+                  </p>
+                </div>
+                {/* Nav arrows */}
+                <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3 pointer-events-none">
+                  <button
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-800 shadow backdrop-blur-sm transition hover:bg-white"
+                    onClick={() => setActive((a) => (a - 1 + IRONMAN_PHOTOS.length) % IRONMAN_PHOTOS.length)}
+                    aria-label="Photo précédente"
+                  >
+                    <ChevronDown className="h-4 w-4 -rotate-90" />
+                  </button>
+                  <button
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-800 shadow backdrop-blur-sm transition hover:bg-white"
+                    onClick={() => setActive((a) => (a + 1) % IRONMAN_PHOTOS.length)}
+                    aria-label="Photo suivante"
+                  >
+                    <ChevronDown className="h-4 w-4 rotate-90" />
+                  </button>
+                </div>
+              </div>
+              {/* Thumbnails */}
+              <div className="grid grid-cols-4 gap-2">
+                {IRONMAN_PHOTOS.map((photo, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`relative overflow-hidden rounded-xl aspect-square transition ring-2 ${active === i ? "ring-orange-500 ring-offset-1" : "ring-transparent hover:ring-orange-300"}`}
+                  >
+                    <img src={photo.src} alt="" className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </FadeUp>
+
+          {/* Article */}
+          <FadeUp delay={0.1}>
+            <div className="space-y-6">
+
+              {/* Event badge */}
+              <div className="flex items-center gap-3 rounded-2xl border border-orange-100 bg-white p-4">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white font-black text-sm"
+                  style={{ background: C.teal }}
+                >
+                  70.3
+                </div>
+                <div>
+                  <p className="font-extrabold text-[#3A1F0F] text-sm">IRONMAN 70.3 Mont-Tremblant</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">
+                    Dimanche 22 juin 2025 · Lac Tremblant, Québec
+                  </p>
+                </div>
+              </div>
+
+              {/* Article body */}
+              <div className="space-y-4 text-sm leading-7 text-neutral-700">
+                <p>
+                  L'Association Afrique-Tremblant a eu le plaisir de participer à l'<strong>IRONMAN 70.3 Mont-Tremblant</strong>,
+                  l'un des événements sportifs internationaux les plus prestigieux des Laurentides. Cette compétition de triathlon
+                  demi-distance — <strong>1,9 km de natation</strong> dans le Lac Tremblant, <strong>90 km de vélo</strong> sur
+                  les routes des Laurentides et <strong>21,1 km de course à pied</strong> dans le village piétonnier —
+                  a réuni près de <strong>3 700 athlètes</strong> venant des quatre coins du monde.
+                </p>
+                <p>
+                  Pour l'occasion, nos membres ont distribué des <strong>t-shirts de l'association</strong> à des athlètes
+                  et visiteurs comme souvenir de leur journée à Mont-Tremblant. Une initiative qui nous a permis de faire
+                  rayonner l'association auprès d'un public international et de renforcer notre ancrage dans la communauté locale.
+                </p>
+                <p>
+                  Fondé en 2012, l'IRONMAN 70.3 de Mont-Tremblant a déjà accueilli les <em>Championnats du Monde IRONMAN 70.3</em>
+                  en 2013 et 2014 — une première hors des États-Unis. Il est régulièrement classé parmi les plus belles épreuves
+                  au monde pour la qualité de son parcours et l'atmosphère conviviale de ses spectateurs.
+                </p>
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { value: "3 700+", label: "Athlètes", color: C.teal },
+                  { value: "113 km", label: "Distance totale", color: C.red },
+                  { value: "~50", label: "Nationalités", color: C.orange },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-xl bg-white border border-neutral-100 p-3 text-center shadow-sm">
+                    <p className="text-xl font-black" style={{ color: s.color }}>{s.value}</p>
+                    <p className="mt-0.5 text-[10px] font-bold uppercase tracking-wide text-neutral-500">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <blockquote
+                className="rounded-2xl p-5 text-sm italic leading-7 text-white"
+                style={{ background: C.teal }}
+              >
+                « Une belle opportunité de promouvoir notre communauté et de renforcer notre visibilité dans la région de Mont-Tremblant. »
+                <footer className="mt-2 not-italic text-xs font-bold text-white/70">— Association Afrique-Tremblant</footer>
+              </blockquote>
+
+            </div>
+          </FadeUp>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -959,6 +1123,9 @@ export default function AfriqueTremblantLandingPage() {
           ))}
         </div>
       </section>
+
+      {/* ── ACTUALITÉS ─────────────────────────────────── */}
+      <IronmanSection />
 
       {/* ── CONTACT ─────────────────────────────────────── */}
       <section id="contact" className="px-5 py-20 md:px-10 md:py-28" style={{ background: "#FAFAF8" }}>
