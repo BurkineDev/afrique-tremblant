@@ -357,7 +357,7 @@ function IronmanSection() {
             >
               Actualité récente
             </span>
-            <span className="text-[11px] font-semibold text-neutral-400">22 juin 2025 · Mont-Tremblant</span>
+            <span className="text-[11px] font-semibold text-neutral-400">20–21 juin 2026 · Mont-Tremblant</span>
           </div>
           <SectionHead
             eyebrow="Sur le terrain"
@@ -429,48 +429,49 @@ function IronmanSection() {
             <div className="space-y-6">
 
               {/* Event badge */}
-              <div className="flex items-center gap-3 rounded-2xl border border-orange-100 bg-white p-4">
+              <div className="flex items-start gap-3 rounded-2xl border border-orange-100 bg-white p-4">
                 <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white font-black text-sm"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white font-black text-sm leading-tight text-center"
                   style={{ background: C.teal }}
                 >
                   70.3
                 </div>
                 <div>
-                  <p className="font-extrabold text-[#3A1F0F] text-sm">IRONMAN 70.3 Mont-Tremblant</p>
-                  <p className="text-xs text-neutral-500 mt-0.5">
-                    Dimanche 22 juin 2025 · Lac Tremblant, Québec
-                  </p>
+                  <p className="font-extrabold text-[#3A1F0F] text-sm">IRONMAN 70.3 · Triathlon 5150 Mont-Tremblant</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">20–21 juin 2026 · Lac Tremblant, Québec</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">1000 ch. des Voyageurs, Mont-Tremblant, QC J8E 1T1</p>
                 </div>
               </div>
 
               {/* Article body */}
               <div className="space-y-4 text-sm leading-7 text-neutral-700">
                 <p>
-                  L'Association Afrique-Tremblant a eu le plaisir de participer à l'<strong>IRONMAN 70.3 Mont-Tremblant</strong>,
-                  l'un des événements sportifs internationaux les plus prestigieux des Laurentides. Cette compétition de triathlon
-                  demi-distance — <strong>1,9 km de natation</strong> dans le Lac Tremblant, <strong>90 km de vélo</strong> sur
-                  les routes des Laurentides et <strong>21,1 km de course à pied</strong> dans le village piétonnier —
-                  a réuni près de <strong>3 700 athlètes</strong> venant des quatre coins du monde.
+                  L'Association Afrique-Tremblant a eu le plaisir de participer au week-end sportif international
+                  des <strong>20 et 21 juin 2026</strong> au Centre de villégiature Tremblant. Le samedi 20 juin,
+                  plus de <strong>1 800 athlètes</strong> ont pris le départ du <strong>Triathlon 5150 Mont-Tremblant</strong>
+                  (1,5 km · 40 km · 10 km). Le lendemain, <strong>3 700 triathlètes</strong> se sont élancés pour
+                  l'<strong>IRONMAN 70.3</strong> : 1,9 km de nage dans le Lac Tremblant, 90 km de vélo dans les
+                  Laurentides et 21,1 km de course jusqu'au fil d'arrivée dans le village piétonnier.
                 </p>
                 <p>
                   Pour l'occasion, nos membres ont distribué des <strong>t-shirts de l'association</strong> à des athlètes
-                  et visiteurs comme souvenir de leur journée à Mont-Tremblant. Une initiative qui nous a permis de faire
-                  rayonner l'association auprès d'un public international et de renforcer notre ancrage dans la communauté locale.
+                  finishers comme souvenir de leur journée à Mont-Tremblant. Une initiative qui a permis de faire
+                  rayonner Afrique-Tremblant auprès d'un public international et de renforcer notre ancrage dans
+                  la communauté locale.
                 </p>
                 <p>
-                  Fondé en 2012, l'IRONMAN 70.3 de Mont-Tremblant a déjà accueilli les <em>Championnats du Monde IRONMAN 70.3</em>
-                  en 2013 et 2014 — une première hors des États-Unis. Il est régulièrement classé parmi les plus belles épreuves
-                  au monde pour la qualité de son parcours et l'atmosphère conviviale de ses spectateurs.
+                  Fondé en 2012, l'IRONMAN 70.3 de Mont-Tremblant a accueilli les <em>Championnats du Monde IRONMAN 70.3</em>
+                  en 2013 et 2014 — une première hors des États-Unis — et reste l'un des triathlons les plus courus
+                  au monde pour la beauté de son cadre naturel et l'organisation exemplaire de sa fin de semaine.
                 </p>
               </div>
 
               {/* Stats row */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { value: "3 700+", label: "Athlètes", color: C.teal },
-                  { value: "113 km", label: "Distance totale", color: C.red },
-                  { value: "~50", label: "Nationalités", color: C.orange },
+                  { value: "5 500+", label: "Athlètes au total", color: C.teal },
+                  { value: "113 km", label: "Distance 70.3", color: C.red },
+                  { value: "2 épreuves", label: "Sur 2 jours", color: C.orange },
                 ].map((s) => (
                   <div key={s.label} className="rounded-xl bg-white border border-neutral-100 p-3 text-center shadow-sm">
                     <p className="text-xl font-black" style={{ color: s.color }}>{s.value}</p>
